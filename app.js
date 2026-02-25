@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="section-content">
         <span class="section-number">${sec.num}</span>
         <h2 class="section-title">${sec.title}</h2>
+        <p class="section-desc-ru">${sec.descRu}</p>
         <p class="section-desc">${sec.desc} · ${products.length} Products</p>
       </div>`;
     wrapper.appendChild(divider);
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="product-info">
             <span class="product-number">#${String(p.id).padStart(2,"0")}</span>
             <h3 class="product-name-en">${p.en}</h3>
+            <p class="product-name-ru">${p.ru}</p>
             <p class="product-name-kr">${p.kr}</p>
             <span class="product-volume">${p.vol}</span>
             <div class="product-price">

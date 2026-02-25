@@ -155,6 +155,16 @@ html, body {
   margin-top: -8px;
 }
 
+.section-desc-ru {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--text);
+  margin-top: 16px;
+  opacity: 0.85;
+}
+
 .section-desc {
   font-family: var(--font-body);
   font-size: 14px;
@@ -243,6 +253,16 @@ html, body {
   font-weight: 300;
   color: var(--text-kr);
   margin-top: 6px;
+}
+
+.product-name-ru {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text);
+  margin-top: 4px;
+  opacity: 0.9;
+  letter-spacing: 0.3px;
 }
 
 .product-volume {
