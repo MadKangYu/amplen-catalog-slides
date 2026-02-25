@@ -1,0 +1,339 @@
+/* === AMPLE:N Catalog — Luxury Editorial Theme === */
+
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --gold: #c9a96e;
+  --gold-dim: #a08550;
+  --gold-bright: #e2c992;
+  --text: #f0ece4;
+  --text-dim: #8a8580;
+  --text-kr: #b8b0a4;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Swiper overrides --- */
+.swiper { width: 100%; height: 100vh; }
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--gold-dim);
+  transition: color 0.3s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover { color: var(--gold-bright); }
+
+.swiper-pagination-bullet {
+  background: var(--gold-dim);
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  background: var(--gold);
+  opacity: 1;
+}
+
+/* --- Slide counter --- */
+.slide-counter {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  z-index: 100;
+}
+
+.exchange-rate {
+  position: fixed;
+  top: 24px;
+  left: 32px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  z-index: 100;
+  opacity: 0.6;
+}
+
+/* === TITLE SLIDE === */
+.slide-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.title-content {
+  text-align: center;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.title-line {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+.title-sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 12px;
+}
+
+.title-brand {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 300;
+  letter-spacing: 12px;
+  color: var(--text);
+  line-height: 1;
+}
+
+.title-year {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.title-info {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  margin-top: 8px;
+}
+
+/* === SECTION DIVIDER === */
+.slide-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.section-content { text-align: center; }
+
+.section-number {
+  font-family: var(--font-display);
+  font-size: 72px;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.25;
+  display: block;
+  line-height: 1;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: var(--text);
+  margin-top: -8px;
+}
+
+.section-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--gold-dim);
+  margin-top: 12px;
+}
+
+/* === PRODUCT SLIDE === */
+.slide-product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 40px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1000px;
+  width: 100%;
+  animation: fadeUp 0.6s ease-out;
+}
+
+.product-image-wrap {
+  flex: 0 0 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201, 169, 110, 0.1);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.product-image {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-image-wrap:hover .product-image {
+  transform: scale(1.08);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-number {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+}
+
+.product-name-en {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 400;
+  color: var(--text);
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+.product-name-kr {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-kr);
+  margin-top: 6px;
+}
+
+.product-volume {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--gold);
+  background: rgba(201, 169, 110, 0.08);
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.product-price {
+  margin-top: 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.price-usd {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  color: var(--gold-bright);
+  letter-spacing: 1px;
+}
+
+.price-krw {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .product-image-wrap {
+    flex: 0 0 auto;
+    width: 240px;
+    height: 240px;
+  }
+
+  .product-price {
+    justify-content: center;
+  }
+
+  .slide-product {
+    padding: 24px 20px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .slide-counter { top: 12px; right: 16px; font-size: 11px; }
+  .exchange-rate { top: 12px; left: 16px; font-size: 10px; }
+
+  .section-number { font-size: 48px; }
+  .title-brand { letter-spacing: 6px; }
+}
+
+@media (max-width: 480px) {
+  .product-image-wrap {
+    width: 200px;
+    height: 200px;
+  }
+
+  .product-name-en { font-size: 22px; }
+  .price-usd { font-size: 28px; }
+}
