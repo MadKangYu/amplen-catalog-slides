@@ -1,3 +1,23 @@
+const HERO_SLIDES = [
+  { img: 'images/hero/cover.jpg', title: 'AMPLE:N', subtitle: 'Premium Korean Skincare' },
+  { img: 'images/hero/peptide-usage-scene.jpg', title: 'Science Meets Beauty', subtitle: 'Advanced Ampoule Technology' },
+  { img: 'images/hero/peeling-gel-action.jpg', title: 'Active Skincare', subtitle: 'Professional Grade Formulas' },
+];
+
+const LIFESTYLE_IMAGES = {
+  special: [
+    { img: 'images/lifestyle/peeling-gel.jpg', caption: 'Purifying Shot · Pumpkin Enzyme Peeling' },
+    { img: 'images/lifestyle/gold-shot.jpg', caption: '24K Gold Shot · Luxury Ampoule' },
+  ],
+  ceramide: [
+    { img: 'images/lifestyle/ceramide-intro.jpg', caption: 'Ceramide Shot · Barrier Repair' },
+  ],
+  tint: [
+    { img: 'images/lifestyle/water-glow-tints.jpg', caption: 'Water Glow Tint Collection' },
+    { img: 'images/lifestyle/tint-4k.jpg', caption: 'Water Glow Tint · K-Beauty Lip Color' },
+  ],
+};
+
 const SECTIONS = [
   { id: "hyaluron", num: "01", title: "Hyaluron Shot", desc: "히알루론샷 라인", descRu: "Гиалуроновая линия" },
   { id: "peptide", num: "02", title: "Peptide Shot", desc: "펩타이드샷 라인", descRu: "Пептидная линия" },

@@ -1,12 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".swiper-wrapper");
 
+  // === HERO SLIDES (after title) ===
+  HERO_SLIDES.forEach(h => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide slide-hero";
+    slide.innerHTML = `
+      <div class="hero-bg" style="background-image:url('${h.img}')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h2 class="hero-title">${h.title}</h2>
+        <p class="hero-subtitle">${h.subtitle}</p>
+      </div>`;
+    wrapper.appendChild(slide);
+  });
+
   // Build slides grouped by section
   const lineOrder = ["hyaluron","peptide","bbsun","acne","vc","special","ceramide","centel","blemy","entangle","tint"];
 
   lineOrder.forEach(lineId => {
     const sec = SECTIONS.find(s => s.id === lineId);
     const products = PRODUCTS.filter(p => p.line === lineId);
+
+    // Lifestyle image slides BEFORE section divider
+    if (LIFESTYLE_IMAGES[lineId]) {
+      LIFESTYLE_IMAGES[lineId].forEach(ls => {
+        const lsSlide = document.createElement("div");
+        lsSlide.className = "swiper-slide slide-lifestyle";
+        lsSlide.innerHTML = `
+          <div class="lifestyle-bg" style="background-image:url('${ls.img}')"></div>
+          <div class="lifestyle-overlay"></div>
+          <div class="lifestyle-caption">${ls.caption}</div>`;
+        wrapper.appendChild(lsSlide);
+      });
+    }
 
     // Section divider slide
     const divider = document.createElement("div");
@@ -37,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="product-volume">${p.vol}</span>
             <div class="product-price">
               <span class="price-usd">${p.usd}</span>
-              <span class="price-krw">₩${p.krw}</span>
             </div>
           </div>
         </div>`;
@@ -48,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Remove the placeholder section slide from HTML
   const placeholders = wrapper.querySelectorAll(".slide-section");
   if (placeholders.length > lineOrder.length) {
-    // Remove the one that was in the static HTML (last extra)
     placeholders[0].remove();
   }
 

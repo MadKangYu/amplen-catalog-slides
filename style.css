@@ -126,6 +126,110 @@ html, body {
   margin-top: 8px;
 }
 
+/* === HERO SLIDES === */
+.slide-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+
+.swiper-slide-active .hero-bg {
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 8, 0.15) 0%,
+    rgba(8, 8, 8, 0.3) 40%,
+    rgba(8, 8, 8, 0.7) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  z-index: 2;
+  animation: fadeUp 1s ease-out 0.3s both;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 7vw, 80px);
+  font-weight: 300;
+  letter-spacing: 8px;
+  color: var(--text);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 2vw, 18px);
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 12px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+/* === LIFESTYLE SLIDES === */
+.slide-lifestyle {
+  position: relative;
+  overflow: hidden;
+}
+
+.lifestyle-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  transition: transform 6s ease-out;
+}
+
+.swiper-slide-active .lifestyle-bg {
+  transform: scale(1);
+}
+
+.lifestyle-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 8, 0.65) 0%,
+    rgba(8, 8, 8, 0) 50%
+  );
+}
+
+.lifestyle-caption {
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(12px, 1.8vw, 16px);
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  z-index: 2;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
 /* === SECTION DIVIDER === */
 .slide-section {
   display: flex;
@@ -294,13 +398,7 @@ html, body {
   letter-spacing: 1px;
 }
 
-.price-krw {
-  font-family: var(--font-body);
-  font-size: 16px;
-  font-weight: 300;
-  color: var(--text-dim);
-  letter-spacing: 1px;
-}
+/* .price-krw removed — USD only on frontend */
 
 /* === ANIMATIONS === */
 @keyframes fadeUp {
@@ -346,7 +444,11 @@ html, body {
 
   .section-number { font-size: 48px; }
   .title-brand { letter-spacing: 6px; }
-}
+
+  .hero-content { bottom: 40px; left: 24px; }
+  .hero-title { letter-spacing: 4px; }
+  .lifestyle-caption { bottom: 24px; letter-spacing: 2px; }
+  }
 
 @media (max-width: 480px) {
   .product-image-wrap {
